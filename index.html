@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA Demo</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/ios-icon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/ios-icon-180x180.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/ios-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/ios-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/ios-icon-60x60.png" />
+    <link rel="apple-touch-startup-image" href="./public/image/apple-touch-startup-image-1125x2436.png"
+        media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="./public/image/apple-touch-startup-image-1242x2148.png"
+        media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="./public/image/apple-touch-startup-image-1536x2048.png"
+        media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="./public/image/apple-touch-startup-image-1668x2224.png"
+        media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="./public/image/apple-touch-startup-image-2048x2732.png"
+        media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            console.log("瀏覽器支援 Service Worker")
+
+            navigator.serviceWorker
+                .register('./serviceWorker.js') // 註冊 Service Worker
+                .then(function (reg) {
+                    console.log('Registration succeeded. Scope is ' + reg.scope) // 註冊成功
+                })
+                .catch(function (error) {
+                    console.log('Registration failed with ' + error) // 註冊失敗
+                })
+        } else {
+            console.log("瀏覽器不支援 Service Worker")
+        }
+    </script>
+</head>
+
+<body>
+    page1
+</body>
+
+</html>
